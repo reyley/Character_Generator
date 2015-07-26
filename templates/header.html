@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Character generator</title>
+
+    {% load staticfiles %}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+
+  <!--[if lt IE 9]>
+  <script src="script/html5shiv.js"></script>
+  <![endif]-->
+  
+  <style>
+    body {
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-top: 0px;
+      color: #303030;
+        min-width:500px;
+        font-family: 'Droid Sans', sans-serif;
+    }
+    #header {
+      position: relative;
+      height: 170px;
+      text-align: center;
+      background-image: url("{% static "Images/rainbow2.jpeg" %}");
+    }
+    #headerText {
+      vertical-align: -55px;
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 40px;
+      font-weight: bold;
+    }
+    #navbar {
+      position: absolute;
+      bottom: 0px;
+      height: 60px;
+      width: 40%;
+      display: flex;
+      background-color: rgba(80, 80, 160, 0.5);
+      padding-left: 30%;
+      padding-right: 30%;
+    }
+    .nav-option {
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 5px;
+      
+      background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, gainsboro 0%, darkgray 100%);
+      background-image: -webkit-radial-gradient(45px 45px, circle cover, gainsboro, darkgray);
+      background-image: radial-gradient(45px 45px 45deg, circle cover, gainsboro 0%, darkgray 100%);
+    }
+    .nav-option:hover {
+      background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, darkgray 0%, gainsboro 100%);
+      background-image: -webkit-radial-gradient(45px 45px, circle cover, darkgray, gainsboro);
+      background-image: radial-gradient(45px 45px 45deg, circle cover, darkgray 0%, gainsboro 100%);
+    }
+    #navbar img {
+      height: 30px;
+      width: 30px;
+      margin-top: 10px;
+    }
+    #content {
+        margin-left: 17%;
+        margin-right: 17%;
+        float:left;
+    }
+    #content:before {
+        content: '';
+        display: inline-block;
+        width: 15%;
+        max-width: 200px;
+    }
+    .question {
+        margin-top: 25px;
+      font-weight: bold;
+    }
+    .leftBar {
+        height: 100%;
+        width: 15%;
+        max-width: 200px;
+        /*background: -webkit-linear-gradient(left, #687ffc, #687ffc, #687ffc, white); /* For Safari 5.1 to 6.0 */
+        /*background: -o-linear-gradient(right, #687ffc, #687ffc, #687ffc, white); /* For Opera 11.1 to 12.0 */
+        /*background: -moz-linear-gradient(right, #687ffc, #687ffc, #687ffc, white); /* For Firefox 3.6 to 15 */
+        /*background: linear-gradient(to right, #687ffc, #687ffc, #687ffc, white); /* Standard syntax */
+        background-color: rgba(80, 80, 160, 0.8);
+        position: fixed;
+        float: left;
+    }
+    .rightBar {
+        height: 100%;
+        width: 15%;
+        max-width: 200px;
+        position: fixed;
+        right: 0px;
+        /*background: -webkit-linear-gradient(left, white , #687ffc, #687ffc, #687ffc); /* For Safari 5.1 to 6.0 */
+        /*background: -o-linear-gradient(right, white, #687ffc, #687ffc, #687ffc); /* For Opera 11.1 to 12.0 */
+        /*background: -moz-linear-gradient(right, white, #687ffc, #687ffc, #687ffc); /* For Firefox 3.6 to 15 */
+        /*background: linear-gradient(to right, white , #687ffc, #687ffc, #687ffc); /* Standard syntax */
+        background-color: rgba(80, 80, 160, 0.8);
+    }
+    .btn {
+      background: #3498db;
+      background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+      background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+      background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+      background-image: -o-linear-gradient(top, #3498db, #2980b9);
+      background-image: linear-gradient(to bottom, #3498db, #2980b9);
+      -webkit-border-radius: 28;
+      -moz-border-radius: 28;
+      border-radius: 28px;
+      font-family: Arial;
+      color: #ffffff;
+      font-size: 20px;
+      padding: 10px 20px 10px 20px;
+      text-decoration: none;
+      border: none;
+        display:table;
+        margin-top: 10px;
+    }
+
+    .btn:hover {
+      background: #3cb0fd;
+      background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+      background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+      background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+      background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+      background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+      text-decoration: none;
+    }
+    select {
+        font-size: inherit;
+        font-family: inherit;
+        color: inherit;
+    }
+    .emphasis {
+        font-weight: bold;
+    }
+
+    table {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      width: 250px;
+      border-collapse: collapse;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    table td, table th {
+      font-size: 1em;
+      /*border: 1px solid midnightblue;*/
+        border: none;
+      padding: 3px 7px 2px 7px;
+    }
+
+    table th {
+      font-size: 1.1em;
+      text-align: left;
+      padding-top: 5px;
+      padding-bottom: 4px;
+      background-color: slateblue;
+      color: #ffffff;
+    }
+
+    table tr.alt td {
+      color: #000000;
+      background-color: aliceblue;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="leftBar"></div>
+  <div class="rightBar"></div>
+  <div id="header"><span id="headerText">Ilan's Character Generator</span>
+    <div id="navbar">
+      <a id="nav-home" class="nav-option" title="Home" href="/index"><img src="{% static "Images/svg/home.svg" %}" /></a>
+      <!--<a id="nav-generate" class="nav-option" title="Generate character" href="/generate/worldwide"><img src="{% static "Images/svg/die.svg" %}" /></a>-->
+      <a id="nav-about" class="nav-option" title="About" href="/about"><img src="{% static "Images/svg/questionmark.svg" %}" /></a>
+      <a id="nav-contact" class="nav-option" title="Contact us" href="/contact"><img src="{% static "Images/svg/mail.svg" %}" /></a>
+    </div>
+  </div>
+  <div id="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>
