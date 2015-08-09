@@ -15,7 +15,14 @@ def generate_view(request, region):
 def get_worldwide_statistics():
     traits = [("Sex", generate_from_distribution(
         [("Female", 100),
-         ("Male", 97)])),
+         ("Male", 101)])),
+        ("Vision", generate_from_distribution(
+            [("Normal", 960),
+             ("Impaired", 35),
+             ("Blind", 5)])),
+        ("Hearing", generate_from_distribution(
+            [("Normal", 95),
+             ("Deaf", 5)])),
         ("Handedness", generate_from_distribution(
             [("Right-handed", 89),
              ("Left-handed", 10),
@@ -36,6 +43,12 @@ def get_usa_statistics():
              ("Native Hawaiian", 2),
              ("Mixed race", 19),
              ("Other (Too small to categorize)", 2)])),
+        ("Vision", generate_from_distribution(
+            [("Normal", 979),
+             ("Impaired", 21)])),
+        ("Hearing", generate_from_distribution(
+            [("Normal", 98),
+             ("Deaf", 2)])),
         ("Handedness", generate_from_distribution(
             [("Right-handed", 89),
              ("Left-handed", 10),

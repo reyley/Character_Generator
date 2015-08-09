@@ -33,7 +33,9 @@
             <option {% if region == 'usa' %}selected="selected"{% endif %} value="usa">United States</option>
         </select>
     </p>
-    <button class="btn" onclick="generateNew()">Generate another character</button>
+    <div class="footerButtons">
+        <button class="btn" onclick="generateNew()">Generate another character</button>
+    </div>
 
     <script>
         function generateNew() {

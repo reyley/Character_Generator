@@ -11,5 +11,5 @@ urlpatterns = patterns(
     url(r'^generate/(?P<region>\w+)$', views.generate_view, name='generate'),
     url(r'^about$', TemplateView.as_view(template_name='about.html'), name='about'),
     url(r'^contact$', TemplateView.as_view(template_name='contact.html'), name='contact'),
-    url(r'^.*', TemplateView.as_view(template_name='index.html'), name='home')
+    url(r'^.*', TemplateView.as_view(template_name='joke.html'), name='home')
 )
