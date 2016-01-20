@@ -9,7 +9,7 @@
       </tr>-->
     {% for attr, value in traits %}
       <tr>
-        <td><span class="emphasis">{{ attr }}:</span></td>
+        <td class="attr"><span class="emphasis">{{ attr }}:</span></td>
         <td>{{ value }}</td>
       </tr>
     {% endfor %}
@@ -32,6 +32,8 @@
             <option {% if region == 'worldwide' %}selected="selected"{% endif %} value="worldwide">Worldwide</option>
             <option {% if region == 'usa' %}selected="selected"{% endif %} value="usa">United States</option>
         </select>
+        {% if region == 'worldwide' %} (Note that sexual orientation and gender identity are always based on US
+            statistics.){% endif %}
     </p>
     <div class="footerButtons">
         <button class="btn" onclick="generateNew()">Generate another character</button>
