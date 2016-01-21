@@ -280,11 +280,11 @@ def get_worldwide_statistics():
             [("Transgender", 3),
              ("Cisgender", 997)])),
         ("Vision", generate_from_distribution(
-            [("Normal", 960),
+            [("Functional", 960),
              ("Impaired", 35),
              ("Blind", 5)])),
         ("Hearing", generate_from_distribution(
-            [("Normal", 95),
+            [("Functional", 95),
              ("Deaf", 5)])),
         ("Handedness", generate_from_distribution(
             [("Right-handed", 89),
@@ -315,11 +315,17 @@ def get_usa_statistics():
         ("Gender Identity", generate_from_distribution(
             [("Transgender", 3),
              ("Cisgender", 997)])),
+        ("Body Size", generate_from_distribution(
+            [("Underweight", 18),
+             ("Healthy weight", 299),
+             ("Overweight", 333),
+             ("Obese", 287),
+             ("Severely obese", 63)])),
         ("Vision", generate_from_distribution(
-            [("Normal", 979),
+            [("Functional", 979),
              ("Impaired", 21)])),
         ("Hearing", generate_from_distribution(
-            [("Normal", 98),
+            [("Functional", 98),
              ("Deaf", 2)])),
         ("Handedness", generate_from_distribution(
             [("Right-handed", 89),
