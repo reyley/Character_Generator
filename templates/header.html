@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html prefix="og: http://ogp.me/ns#">
 <head>
   <meta charset="utf-8">
   <title>Character generator</title>
+  <meta property="og:title" content="Ilan's Character Generator" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://chargen.ilan-family.com" />
+  <meta property="og:description" content="A character trait generator based on real statistics for creating diverse
+  characters in fiction." />
+  <meta property="og:image" content="http://chargen.ilan-family.com/static/Images/logo.png"/>
 
     {% load staticfiles %}
 <!--  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link rel="shortcut icon" type="image/svg" href="{% static "Images/svg/die.svg" %}"/>
-  <meta property="og:image" content="{% static "Images/svg/die.svg" %}"/>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" type="image/x-icon" href="{% static "Images/favicon.ico" %}"/>
 
   <!--[if lt IE 9]>
   <script src="script/html5shiv.js"></script>
@@ -188,7 +193,6 @@
   <div id="header"><span id="headerText">Ilan's Character Generator</span>
     <div id="navbar">
       <a id="nav-home" class="nav-option" title="Home" href="/index"><img src="{% static "Images/svg/home.svg" %}" /></a>
-      <!--<a id="nav-generate" class="nav-option" title="Generate character" href="/generate/worldwide"><img src="{% static "Images/svg/die.svg" %}" /></a>-->
       <a id="nav-about" class="nav-option" title="About" href="/about"><img src="{% static "Images/svg/questionmark.svg" %}" /></a>
       <a id="nav-contact" class="nav-option" title="Contact us" href="/contact"><img src="{% static "Images/svg/mail.svg" %}" /></a>
     </div>
