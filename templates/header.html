@@ -2,22 +2,26 @@
 <html prefix="og: http://ogp.me/ns#">
 <head>
   <meta charset="utf-8">
+    {% load static %}
   <title>Character generator</title>
   <meta property="og:title" content="Ilan's Character Generator" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="http://chargen.ilan-family.com" />
   <meta property="og:description" content="A character trait generator based on real statistics for creating diverse
   characters in fiction." />
-  <meta property="og:image" content="http://chargen.ilan-family.com/static/Images/logo.png"/>
+  <meta property="og:image" content="{% static "Images/logo.png" %}"/>
+    <script src="https://twemoji.maxcdn.com/v/13.1.0/twemoji.min.js" integrity="sha384-gPMUf7aEYa6qc3MgqTrigJqf4gzeO6v11iPCKv+AP2S4iWRWCoWyiR+Z7rWHM/hU" crossorigin="anonymous"></script>
 
-    {% load staticfiles %}
+
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
   <link rel="shortcut icon" type="image/x-icon" href="{% static "Images/favicon.ico" %}"/>
 
+
   <!--[if lt IE 9]>
-  <script src="script/html5shiv.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha512-UDJtJXfzfsiPPgnI5S1000FPLBHMhvzAMX15I+qG2E2OAzC9P1JzUwJOfnypXiOH7MRPaqzhPbBGDNNj7zBfoA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <![endif]-->
   
   <style>
@@ -211,9 +215,9 @@
   <div class="rightBar"></div>
   <div id="header"><span id="headerText">Ilan's Character Generator</span>
     <div id="navbar">
-      <a id="nav-home" class="nav-option" title="Home" href="/index"><img src="{% static "Images/svg/home.svg" %}" /></a>
-      <a id="nav-about" class="nav-option" title="About" href="/about"><img src="{% static "Images/svg/questionmark.svg" %}" /></a>
-      <a id="nav-contact" class="nav-option" title="Contact us" href="/contact"><img src="{% static "Images/svg/mail.svg" %}" /></a>
+      <a id="nav-home" class="nav-option" title="Home" href="/index">🏠</a>
+      <a id="nav-about" class="nav-option" title="About" href="/about">❓</a>
+      <a id="nav-contact" class="nav-option" title="Contact us" href="/contact">📩</a>
     </div>
   </div>
   <div id="content">
