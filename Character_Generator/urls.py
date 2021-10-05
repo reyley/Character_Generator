@@ -19,14 +19,18 @@ from django.conf.urls import  include, url
 from django.contrib import admin
 from django.views.generic import TemplateView
 from Character_Generator import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     #    path('admin/', admin.site.urls),
     re_path(r'^$', TemplateView.as_view(template_name='index.html'), name='home'),
-    re_path(r'^index$', TemplateView.as_view(template_name='index.html'), name='home'),
+    re_path(r'^index$', TemplateView.as_view(template_name='index.html'), name='index'),
     re_path(r'^generate/(?P<region>\w+)$', views.generate_view, name='generate'),
     re_path(r'^about$', TemplateView.as_view(template_name='about.html'), name='about'),
     re_path(r'^contact$', TemplateView.as_view(template_name='contact.html'), name='contact'),
-    re_path(r'^.*', TemplateView.as_view(template_name='joke.html'), name='home')
-]
+   
+] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
