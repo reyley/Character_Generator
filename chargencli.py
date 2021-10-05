@@ -18,6 +18,7 @@ options:
 
 import random
 from docopt import docopt
+from os import system
 
 arguments = docopt(__doc__, options_first=True, version='1.0.0')
 
@@ -369,3 +370,4 @@ if __name__ == '__main__':
     print(f"For the region of: {region.upper()}")
     for attrib, value in traits:
         print(f"{attrib} -> {value}")
+    os.system('pause')
